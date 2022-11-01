@@ -3,12 +3,7 @@ import styled from "styled-components";
 import { textYellow, textSecondary } from "@styles/colors";
 import Header from "@components/templates/Header";
 import TopBanner from "@components/templates/TopBanner";
-
-const Events = styled("div")`
-	width: 100%;
-	height: 398px;
-	background-color: pink;
-`;
+import Events from "@components/templates/Events";
 
 const ItemsOnSale = styled("div")`
 	width: 100%;
@@ -41,7 +36,7 @@ function App() {
 			<GlobalStyle />
 			<Header />
 			<TopBanner />
-			<Events>이벤트</Events>
+			<Events />
 			<ItemsOnSale>이벤트</ItemsOnSale>
 			<OpenseaTopCollections>이벤트</OpenseaTopCollections>
 			<OnBoarding>온보딩</OnBoarding>
