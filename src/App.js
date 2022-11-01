@@ -4,12 +4,7 @@ import { textYellow, textSecondary } from "@styles/colors";
 import Header from "@components/templates/Header";
 import TopBanner from "@components/templates/TopBanner";
 import Events from "@components/templates/Events";
-
-const ItemsOnSale = styled("div")`
-	width: 100%;
-	height: 398px;
-	background-color: teal;
-`;
+import ItemsOnSale from "@components/templates/ItemsOnSale";
 
 const OpenseaTopCollections = styled("div")`
 	width: 100%;
@@ -37,8 +32,8 @@ function App() {
 			<Header />
 			<TopBanner />
 			<Events />
-			<ItemsOnSale>이벤트</ItemsOnSale>
-			<OpenseaTopCollections>이벤트</OpenseaTopCollections>
+			<ItemsOnSale />
+			<OpenseaTopCollections>OpenseaTopCollections</OpenseaTopCollections>
 			<OnBoarding>온보딩</OnBoarding>
 			<Footer>푸터</Footer>
 		</>
