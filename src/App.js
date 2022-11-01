@@ -2,12 +2,7 @@ import GlobalStyle from "./GlobalStyle";
 import styled from "styled-components";
 import { textYellow, textSecondary } from "@styles/colors";
 import Header from "@components/templates/Header";
-
-const TopBanner = styled("div")`
-	width: 100%;
-	height: 400px;
-	background-color: yellow;
-`;
+import TopBanner from "@components/templates/TopBanner";
 
 const Events = styled("div")`
 	width: 100%;
@@ -45,7 +40,7 @@ function App() {
 		<>
 			<GlobalStyle />
 			<Header />
-			<TopBanner>탑배너</TopBanner>
+			<TopBanner />
 			<Events>이벤트</Events>
 			<ItemsOnSale>이벤트</ItemsOnSale>
 			<OpenseaTopCollections>이벤트</OpenseaTopCollections>
