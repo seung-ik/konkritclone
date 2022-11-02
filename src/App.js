@@ -1,16 +1,11 @@
 import GlobalStyle from "./GlobalStyle";
 import styled from "styled-components";
-import { textYellow, textSecondary } from "@styles/colors";
+import { textYellow } from "@styles/colors";
 import Header from "@components/templates/Header";
 import TopBanner from "@components/templates/TopBanner";
 import Events from "@components/templates/Events";
 import ItemsOnSale from "@components/templates/ItemsOnSale";
-
-const OpenseaTopCollections = styled("div")`
-	width: 100%;
-	height: 648px;
-	background-color: ${textSecondary};
-`;
+import OpenseaTopCollections from "@components/templates/OpenseaTopCollections";
 
 const OnBoarding = styled("div")`
 	width: 100%;
@@ -33,7 +28,7 @@ function App() {
 			<TopBanner />
 			<Events />
 			<ItemsOnSale />
-			<OpenseaTopCollections>OpenseaTopCollections</OpenseaTopCollections>
+			<OpenseaTopCollections />
 			<OnBoarding>온보딩</OnBoarding>
 			<Footer>푸터</Footer>
 		</>

@@ -10,6 +10,8 @@ export const bgSecondary = "#27272a";
 export const bgBlack = "black";
 export const bgBannerButton = "rgba(0, 0, 0, 0.4)";
 
+export const borderSecondary = "rgba(39,39,42)";
+
 export const textGradient = `linear-gradient(
     90deg,
     #ffff32,

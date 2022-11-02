@@ -1,41 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import * as colors from "@styles/colors";
+import Ether from "@components/atoms/Ether";
+import SectionTop from "../molecules/SectionTop";
+import HideScrollX from "../molecules/HideScrollX";
 
 const Container = styled("div")`
 	width: 100%;
 	height: 398px;
 	padding: 40px 16px;
 	background-color: ${colors.bgPrimary};
-`;
-
-const SectionTopWrapper = styled("div")`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-`;
-
-const SectionTitle = styled("span")`
-	font-size: 18px;
-	font-weight: 700;
-`;
-
-const ShowAllText = styled("span")`
-	font-size: 14px;
-	color: ${colors.textSecondary};
-`;
-
-const EventCardsWrapper = styled("div")`
-	margin-top: 24px;
-	display: flex;
-	gap: 16px;
-
-	overflow-x: scroll;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	-ms-overflow-style: none;
-	scrollbar-width: none;
 `;
 
 const CardWrapper = styled("div")`
@@ -68,6 +42,9 @@ const PriceBox = styled("div")`
 const CollectionTitle = styled("div")`
 	font-size: 12px;
 	color: ${colors.textSecondary};
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 `;
 
 const Title = styled("div")`
@@ -76,23 +53,46 @@ const Title = styled("div")`
 	margin-top: 4px;
 `;
 
+const PriceTitle = styled("div")`
+	font-size: 10px;
+	color: ${colors.textSecondary};
+	font-weight: 700;
+`;
+
+const PriceWrapper = styled("div")`
+	display: flex;
+	gap: 4px;
+	margin-top: 4px;
+`;
+
+const PriceText = styled("div")`
+	font-family: MarkPro-Heavy;
+	font-size: 14px;
+	align-self: flex-end;
+`;
+
 const ItemsOnSale = () => {
 	return (
 		<Container>
-			<SectionTopWrapper>
-				<SectionTitle>지금 판매중인 아이템</SectionTitle>
-				<ShowAllText>아이템 전체보기</ShowAllText>
-			</SectionTopWrapper>
-			<EventCardsWrapper>
-				<CardWrapper>
-					<CardImage src="https://konkrit-prod-itemmedia-t837t51tz51i.s3.ap-northeast-2.amazonaws.com/0x1fec856e25f757fed06eb90548b0224e91095738/0x1fec856e25f757fed06eb90548b0224e91095738-6741.png" />
-					<InfoBox>
-						<CollectionTitle>FrankenPunks</CollectionTitle>
-						<Title>#6741</Title>
-					</InfoBox>
-					<PriceBox>100원</PriceBox>
-				</CardWrapper>
-			</EventCardsWrapper>
+			<SectionTop title="지금 판매중인 아이템" showAll="아이템 전체보기" />
+			<HideScrollX>
+				{[1, 2, 3, 4, 5].map((el) => (
+					<CardWrapper>
+						<CardImage src="https://konkrit-prod-itemmedia-t837t51tz51i.s3.ap-northeast-2.amazonaws.com/0x1fec856e25f757fed06eb90548b0224e91095738/0x1fec856e25f757fed06eb90548b0224e91095738-6741.png" />
+						<InfoBox>
+							<CollectionTitle>FrankenPunk</CollectionTitle>
+							<Title>#6741</Title>
+						</InfoBox>
+						<PriceBox>
+							<PriceTitle>판매가</PriceTitle>
+							<PriceWrapper>
+								<Ether />
+								<PriceText>0.01</PriceText>
+							</PriceWrapper>
+						</PriceBox>
+					</CardWrapper>
+				))}
+			</HideScrollX>
 		</Container>
 	);
 };

@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import * as colors from "@styles/colors";
-
-const Container = styled("div")`
-	width: 100%;
-	height: 398px;
-	background-color: ${colors.bgSecondary};
-	padding: 40px 16px;
-`;
+import SectionLayout from "../molecules/SectionLayout";
+import HideScrollX from "../molecules/HideScrollX";
 
 const EventTopWrapper = styled("div")`
 	display: flex;
@@ -30,19 +25,6 @@ const ShowAllText = styled("span")`
 	font-size: 14px;
 	font-weight: 700;
 	color: ${colors.textSecondary};
-`;
-
-const EventCardsWrapper = styled("div")`
-	margin-top: 24px;
-	display: flex;
-	gap: 16px;
-
-	overflow-x: scroll;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	-ms-overflow-style: none;
-	scrollbar-width: none;
 `;
 
 const EventCardWrapper = styled("div")`
@@ -98,12 +80,12 @@ const EventTitle = styled("div")`
 `;
 const Events = () => {
 	return (
-		<Container>
+		<SectionLayout>
 			<EventTopWrapper>
 				<GradientSectionTitle>KONKRIT ORIGINALS</GradientSectionTitle>
 				<ShowAllText>이벤트 전체보기</ShowAllText>
 			</EventTopWrapper>
-			<EventCardsWrapper>
+			<HideScrollX>
 				{[1, 2, 3, 4].map((el) => {
 					return (
 						<div>
@@ -134,8 +116,8 @@ const Events = () => {
 						</div>
 					);
 				})}
-			</EventCardsWrapper>
-		</Container>
+			</HideScrollX>
+		</SectionLayout>
 	);
 };
 
