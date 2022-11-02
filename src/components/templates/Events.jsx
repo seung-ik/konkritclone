@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import * as colors from "@styles/colors";
 import SectionLayout from "../molecules/SectionLayout";
 import HideScrollX from "../molecules/HideScrollX";
@@ -9,13 +9,27 @@ const EventTopWrapper = styled("div")`
 	justify-content: space-between;
 `;
 
+const shine = keyframes`
+	from {
+		background-position: 0%;
+		opacity: 0.9;
+	}
+
+	to {
+		background-position: 200%;
+		opacity: 1;
+	}
+`;
 const GradientSectionTitle = styled("span")`
 	font-size: 18px;
 	font-weight: 700;
 	background: ${colors.textGradient};
+	background-size: 200% auto;
+	background-position: 0%;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	animation: ${shine} 4s linear infinite;
 `;
 
 const ShowAllText = styled("span")`
