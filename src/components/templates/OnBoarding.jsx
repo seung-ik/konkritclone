@@ -39,7 +39,7 @@ const OnBoarding = () => {
 			<OnBoardList>
 				{onBoardData.map((el) => {
 					return (
-						<li>
+						<li key={el.id}>
 							<OnBoardImage src={el.imgUrl}></OnBoardImage>
 							<OnBoardText>{el.title}</OnBoardText>
 						</li>

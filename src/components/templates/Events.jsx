@@ -102,7 +102,7 @@ const Events = () => {
 			<HideScrollX>
 				{[1, 2, 3, 4].map((el) => {
 					return (
-						<div>
+						<div key={el}>
 							<EventCardWrapper>
 								<CountDownWrapper>
 									<EachCountWrapper>

@@ -3,7 +3,7 @@ export const textPrimary = "#FFFFFF";
 export const textSecondary = "rgba(255, 255, 255, 0.64)";
 export const textYellow = "#FFD121";
 export const textGreen = "#22c55e";
-export const textRef = "#ef4444";
+export const textRed = "#ef4444";
 
 export const bgPrimary = "rgb(24, 24, 27)";
 export const bgSecondary = "#27272a";
