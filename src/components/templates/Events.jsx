@@ -50,9 +50,9 @@ const Events = () => {
 				<ShowAllText>이벤트 전체보기</ShowAllText>
 			</EventTopWrapper>
 			<HideScrollX>
-				{[1, 2, 3, 4].map((el) => (
-					<EventCard key={el} />
-				))}
+				{/* {[1, 2, 3, 4].map((el) => ( */}
+				<EventCard />
+				{/* ))} */}
 			</HideScrollX>
 		</SectionLayout>
 	);
