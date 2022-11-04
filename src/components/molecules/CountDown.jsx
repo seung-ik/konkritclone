@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import useCountDown from "../../hooks/useCountDown";
 
@@ -26,14 +26,30 @@ const UnitText = styled("div")`
 	align-self: flex-end;
 `;
 
-const CountDown = () => {
+const CountDown = ({ targetDate }) => {
 	// month 경우 인덱스 이기때문에 월 하나 빼서 들어감
-	const time = useCountDown(new Date(2022, 10, 5));
+	const { countDown, isClosed, isCommigSoon } = useCountDown(targetDate);
 
-	const day = Math.floor(time / 1000 / 60 / 60 / 24);
-	const hour = Math.floor((time / 1000 / 60 / 60) % 24);
-	const min = Math.floor((time / 1000 / 60) % 60);
-	const second = Math.floor((time / 1000) % 60);
+	const day = Math.floor(countDown / 1000 / 60 / 60 / 24);
+	const hour = Math.floor((countDown / 1000 / 60 / 60) % 24);
+	const min = Math.floor((countDown / 1000 / 60) % 60);
+	const second = Math.floor((countDown / 1000) % 60);
+
+	if (isClosed) {
+		return (
+			<CountDownWrapper>
+				<CountText>CLOSED</CountText>
+			</CountDownWrapper>
+		);
+	}
+
+	if (isCommigSoon) {
+		return (
+			<CountDownWrapper>
+				<CountText>COMMINGSOON</CountText>
+			</CountDownWrapper>
+		);
+	}
 
 	return (
 		<CountDownWrapper>

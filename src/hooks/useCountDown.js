@@ -5,6 +5,9 @@ function useCountDown(targetDate) {
 		return targetDate - new Date();
 	});
 
+	const isClosed = countDown <= 0;
+	const isCommigSoon = isNaN(targetDate);
+
 	useEffect(() => {
 		const id = setInterval(() => {
 			setCountDown((prev) => Math.max(prev - 1000, 0));
@@ -13,7 +16,7 @@ function useCountDown(targetDate) {
 		return () => clearInterval(id);
 	}, []);
 
-	return countDown > 0 ? countDown : 0;
+	return { countDown: countDown > 0 ? countDown : 0, isClosed, isCommigSoon };
 }
 
 export default useCountDown;
