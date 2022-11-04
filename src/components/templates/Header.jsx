@@ -8,7 +8,6 @@ import Wallet from "@components/atoms/Wallet";
 import kaikasImageUrl from "@assets/image/kaikas.png";
 import { toast } from "react-toastify";
 import useAuth from "@hooks/useAuth";
-import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers";
 
 const Container = styled("div")`
 	position: fixed;
@@ -83,6 +82,7 @@ const Header = () => {
 			const account = await toast.promise(klaytn.enable(), { pending: "지갑연동중" }, { closeButton: true });
 			console.log(account);
 			setUser(account[0]);
+			localStorage.setItem("_user", account[0]);
 			toast.success(`${account[0].slice(0, 13)}...화녕ㅇ함니다`);
 		} catch (err) {
 			toast.error("로그인 실패");
@@ -101,6 +101,7 @@ const Header = () => {
 		}
 		toast.warn("다시 로긴 해주세요~");
 		setUser("");
+		localStorage.removeItem("_user");
 	}
 	return (
 		<Container>
